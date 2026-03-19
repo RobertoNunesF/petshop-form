@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PETs ADS</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="cabecalho">
+      <nav>
+        <h1 class="cabecalho__titulo">PET's ADS</h1>
+        <p class="cabecalho__texto">by Hope & Roberto</p>
+      </nav>
+    </header>
+    <hr />
+    <main class="corpo">
+      <h2>Levantamento de Requisitos - PetShop</h2>
+      <div class="formulario">
+        <form action="https://formspree.io/f/xdawyqrw" method="POST">
+          <label for="">Você é:</label> <br />
+          <input
+            type="radio"
+            name="tipo"
+            value="cliente"
+            onclick="perguntas()"
+          />Cliente/Tutor
+          <br />
+          <input
+            type="radio"
+            name="tipo"
+            value="funcionario"
+            onclick="perguntas()"
+          />Funcionário
+          <br />
+          <input
+            type="radio"
+            name="tipo"
+            value="gerente"
+            onclick="perguntas()"
+          />Gerente
+          <br />
+          <div id="cliente" class="perguntas">
+            <h3>Agendamento</h3>
+            <label for=""
+              >Com que frequencia você leva seu pet para tomar
+              banho/tosa?</label
+            >
+            <br />
+            <input type="radio" name="frequencia" value="semanal" /> Semanal
+            <br />
+            <input type="radio" name="frequencia" value="quinzenal" />
+            Quinzenal <br />
+            <input type="radio" name="frequencia" value="mensal" /> Mensal
+            <br />
+            <input type="radio" name="frequencia" value="raramente" />
+            Raramente <br />
+            <label for="">Você gostaria de agendar banho/tosa?</label> <br />
+            <input type="radio" name="agendamento" value="sim" />Sim <br />
+            <input type="radio" name="agendamento" value="nao" />Não <br />
+            <label>Você gostaria de escolher o horário disponível?</label><br />
+            <input type="radio" name="horario" value="sim" />Sim <br />
+            <input type="radio" name="horario" value="nao" />Não <br />
+            <h3>Sobre o Pet</h3>
+            <label
+              >Você gostaria de cadastrar informações do seu pet no
+              sistema?</label
+            ><br />
+            <input type="radio" name="cadastro_pet" value="sim" />Sim <br />
+            <input type="radio" name="cadastro_pet" value="nao" />Não <br />
+            <label>Quais informações considera importantes?</label><br />
+            <input type="checkbox" name="info_pet" value="nome" /> Nome<br />
+            <input type="checkbox" name="info_pet" value="idade" />
+            Idade<br />
+            <input type="checkbox" name="info_pet" value="raca" /> Raça<br />
+            <input type="checkbox" name="info_pet" value="historico" />
+            Histórico de saúde<br />
+            <h3>Serviços</h3>
+            <label for=""
+              >Você gostaria de comprar produtos pelo sistema (ração,
+              acessórios...)?</label
+            >
+            <br />
+            <input type="radio" name="compras" value="sim" />Sim <br />
+            <input type="radio" name="compras" value="nao" />Não <br />
+            <h3>Preferências</h3>
+            <label>Gostaria de receber lembretes de agendamento?</label><br />
+            <input type="radio" name="notificacao" value="sim" />Sim <br />
+            <input type="radio" name="notificacao" value="nao" />Não <br />
+            <label>Que tipo de notificação você gostaria de receber?</label
+            ><br />
+            <input type="checkbox" name="info__notificacao" value="lembrete" />
+            Lembrete de agendamento<br />
+            <input type="checkbox" name="info__notificacao" value="promocoes" />
+            Promoções<br />
+            <input type="checkbox" name="info__notificacao" value="vacinas" />
+            Vacinas pendentes<br />
+            <h3>Opinião</h3>
+            <label
+              >Qual a maior dificuldade que você encontra em pet shops
+              hoje?</label
+            ><br />
+            <textarea rows="4" name="dificuldade_cliente"></textarea><br />
+            <label
+              >Que funcionalidade você gostaria que existisse em um sistema de
+              pet shop?</label
+            ><br />
+            <textarea rows="4" name="sugestao_cliente"></textarea><br />
+          </div>
+
+          <div id="funcionario" class="perguntas">
+            <h3>Atendimento</h3>
+            <label>Você utiliza agenda para organizar atendimentos?</label
+            ><br />
+            <input type="radio" name="agenda_func" value="sim" />Sim <br />
+            <input type="radio" name="agenda_func" value="nao" />Não <br />
+            <label
+              >Você gostaria de visualizar todos os atendimentos do dia?</label
+            ><br />
+            <input type="radio" name="atendimentos_dia" value="sim" />Sim <br />
+            <input type="radio" name="atendimentos_dia" value="nao" />Não
+            <br />
+            <h3>Controle dos Pets</h3>
+            <label
+              >Você considera importante acessar o histórico dos pets?</label
+            ><br />
+            <input type="radio" name="historico_pet" value="sim" />Sim <br />
+            <input type="radio" name="historico_pet" value="nao" />Não <br />
+            <label>Quais informações são importantes no atendimento?</label
+            ><br />
+            <input type="checkbox" name="info_atendimento" value="nome_pet" />
+            Nome do pet<br />
+            <input type="checkbox" name="info_atendimento" value="servico" />
+            Tipo de serviço<br />
+            <input
+              type="checkbox"
+              name="info_atendimento"
+              value="observacoes"
+            />
+            Observações<br />
+            <input type="checkbox" name="info_atendimento" value="historico" />
+            Histórico<br />
+            <h3>Organização</h3>
+            <label
+              >Você gostaria de receber alertas de próximos atendimentos?</label
+            ><br />
+            <input type="radio" name="alertas" value="sim" />Sim <br />
+            <input type="radio" name="alertas" value="nao" />Não <br />
+            <label>Qual a maior dificuldade no atendimento hoje?</label><br />
+            <textarea rows="4" name="dificuldade_funcionario"></textarea><br />
+          </div>
+
+          <div id="gerente" class="perguntas">
+            <h3>Estoque</h3>
+            <label>Você realiza controle de estoque atualmente?</label><br />
+            <input type="radio" name="estoque_gerente" value="sim" />Sim <br />
+            <input type="radio" name="estoque_gerente" value="nao" />Não <br />
+            <label
+              >Você considera importante receber alertas de estoque
+              baixo?</label
+            ><br />
+            <input type="radio" name="alerta_estoque" value="sim" />Sim <br />
+            <input type="radio" name="alerta_estoque" value="nao" />Não <br />
+            <label>Você já teve problemas com produtos vencidos?</label><br />
+            <input type="radio" name="validade" value="sim" />Sim <br />
+            <input type="radio" name="validade" value="nao" />Não <br />
+            <h3>Funcionários</h3>
+            <label>Você organiza escala de funcionários?</label><br />
+            <input type="radio" name="escala" value="sim" />Sim <br />
+            <input type="radio" name="escala" value="nao" />Não <br />
+            <label>Você gostaria de gerenciar a escala pelo sistema?</label
+            ><br />
+            <input type="radio" name="escala_sistema" value="sim" />Sim <br />
+            <input type="radio" name="escala_sistema" value="nao" />Não
+            <br />
+            <h3>Relatórios</h3>
+            <label>Você considera importante visualizar relatórios?</label
+            ><br />
+            <input type="radio" name="relatorios" value="sim" />Sim <br />
+            <input type="radio" name="relatorios" value="nao" />Não <br />
+            <label>Quais relatórios são importantes?</label><br />
+            <input type="checkbox" name="tipo_relatorio" value="vendas" />
+            Vendas<br />
+            <input type="checkbox" name="tipo_relatorio" value="servicos" />
+            Serviços realizados<br />
+            <input type="checkbox" name="tipo_relatorio" value="estoque" />
+            Estoque<br />
+            <h3>Opinião</h3>
+            <label>Qual a maior dificuldade na gestão do pet shop?</label><br />
+            <textarea rows="4" name="dificuldade_gerente"></textarea><br />
+            <label
+              >Que funcionalidade você gostaria que o sistema tivesse?</label
+            ><br />
+            <textarea rows="4" name="sujestao_gerente"></textarea><br />
+            <label></textarea><br />
+          </div>
+          <button type="submit">Enviar respostas</button>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
